@@ -113,9 +113,9 @@ export const Hero = () => {
             className="relative w-full h-auto object-cover select-none pointer-events-none"
             style={{
               maskImage:
-                "radial-gradient(ellipse 65% 75% at 50% 45%, black 35%, transparent 95%)",
+                "radial-gradient(ellipse 60% 70% at 50% 45%, black 30%, transparent 80%)",
               WebkitMaskImage:
-                "radial-gradient(ellipse 65% 75% at 50% 45%, black 35%, transparent 95%)",
+                "radial-gradient(ellipse 60% 70% at 50% 45%, black 30%, transparent 80%)",
             }}
             draggable={false}
           />
