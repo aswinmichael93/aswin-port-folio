@@ -86,48 +86,33 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Right: portrait */}
+        {/* Right: portrait — frameless, blended into background */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="relative mx-auto w-full max-w-sm lg:max-w-none"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          className="relative mx-auto w-full max-w-xs lg:max-w-sm"
         >
-          {/* Glow halo */}
-          <div className="absolute -inset-6 bg-gradient-accent opacity-20 blur-3xl rounded-full" aria-hidden />
+          {/* Soft ambient glow that matches page background */}
+          <div
+            className="absolute inset-0 bg-primary/10 blur-3xl rounded-full scale-90"
+            aria-hidden
+          />
 
-          {/* Frame */}
-          <div className="relative rounded-2xl overflow-hidden border border-hairline bg-surface-elevated shadow-soft">
-            <div className="absolute inset-0 ring-1 ring-inset ring-primary/10 rounded-2xl pointer-events-none z-10" />
-            <img
-              src={portrait}
-              alt="Portrait of Aswin"
-              width={896}
-              height={1152}
-              className="w-full h-auto object-cover aspect-[4/5] grayscale-[15%] hover:grayscale-0 transition-all duration-700"
-            />
-            {/* Subtle corner accents */}
-            <div className="absolute top-3 left-3 w-5 h-5 border-t border-l border-primary/60 z-10" />
-            <div className="absolute top-3 right-3 w-5 h-5 border-t border-r border-primary/60 z-10" />
-            <div className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-primary/60 z-10" />
-            <div className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-primary/60 z-10" />
-          </div>
-
-          {/* Floating tag */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="absolute -bottom-4 -left-4 md:-left-6 surface-card rounded-xl px-4 py-3 flex items-center gap-3 shadow-soft"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <div>
-              <div className="text-xs text-mono text-muted-foreground uppercase tracking-wider">
-                Status
-              </div>
-              <div className="text-sm font-medium">Open to work</div>
-            </div>
-          </motion.div>
+          <img
+            src={portrait}
+            alt="Portrait of Aswin"
+            width={896}
+            height={1152}
+            className="relative w-full h-auto object-cover select-none pointer-events-none"
+            style={{
+              maskImage:
+                "radial-gradient(ellipse 75% 85% at 50% 45%, black 55%, transparent 100%)",
+              WebkitMaskImage:
+                "radial-gradient(ellipse 75% 85% at 50% 45%, black 55%, transparent 100%)",
+            }}
+            draggable={false}
+          />
         </motion.div>
       </div>
 
