@@ -1,10 +1,21 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Download, Shield, Cpu } from "lucide-react";
+import { useRef } from "react";
 import portrait from "@/assets/aswin-portrait.jpg";
 
 export const Hero = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const imageOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
+
   return (
     <section
+      ref={sectionRef}
       id="home"
       className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden"
     >
@@ -86,19 +97,14 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Right: portrait — frameless, blended into background */}
+        {/* Right: portrait — frameless, fully blended, scroll-fade */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-          className="relative mx-auto w-full max-w-xs lg:max-w-sm"
+          style={{ opacity: imageOpacity, y: imageY, scale: imageScale }}
+          className="relative mx-auto w-full max-w-[220px] lg:max-w-[280px]"
         >
-          {/* Soft ambient glow that matches page background */}
-          <div
-            className="absolute inset-0 bg-primary/10 blur-3xl rounded-full scale-90"
-            aria-hidden
-          />
-
           <img
             src={portrait}
             alt="Portrait of Aswin"
@@ -107,9 +113,9 @@ export const Hero = () => {
             className="relative w-full h-auto object-cover select-none pointer-events-none"
             style={{
               maskImage:
-                "radial-gradient(ellipse 75% 85% at 50% 45%, black 55%, transparent 100%)",
+                "radial-gradient(ellipse 65% 75% at 50% 45%, black 35%, transparent 95%)",
               WebkitMaskImage:
-                "radial-gradient(ellipse 75% 85% at 50% 45%, black 55%, transparent 100%)",
+                "radial-gradient(ellipse 65% 75% at 50% 45%, black 35%, transparent 95%)",
             }}
             draggable={false}
           />
