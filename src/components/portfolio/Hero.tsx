@@ -42,7 +42,7 @@ export const Hero = () => {
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]"
           >
-            Aswin<span className="text-primary">.</span>
+            Aswin P J <span className="text-primary"></span>
           </motion.h1>
 
           <motion.div
