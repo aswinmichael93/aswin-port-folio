@@ -3,7 +3,7 @@ import { SectionHeading } from "./SectionHeading";
 import { Mail, Github, Linkedin, Send, Download } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
-import emailjs from "@emailjs/browser"; // ✅ IMPORTANT
+import emailjs from "@emailjs/browser"; 
 
 export const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -26,7 +26,7 @@ export const Contact = () => {
       )
       .then(() => {
         toast({
-          title: "Message sent ✅",
+          title: "Message sent ",
           description: "I’ll get back to you soon.",
         });
 
