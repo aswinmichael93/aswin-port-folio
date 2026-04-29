@@ -5,20 +5,21 @@ import { Skills } from "@/components/portfolio/Skills";
 import { Projects } from "@/components/portfolio/Projects";
 import { Education } from "@/components/portfolio/Education";
 import { Certifications } from "@/components/portfolio/Certifications";
+import { Achievements } from "@/components/portfolio/Achievement";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Aswin P J — Cybersecurity Enthusiast & AI Developer";
+    document.title = "Aswin — Cybersecurity Enthusiast & AI Developer";
     const meta =
       document.querySelector('meta[name="description"]') ||
       document.head.appendChild(document.createElement("meta"));
     meta.setAttribute("name", "description");
     meta.setAttribute(
       "content",
-      "Portfolio of Aswin P J , an engineering student building secure and intelligent systems — cybersecurity, AI, and backend engineering."
+      "Portfolio of Aswin, an engineering student building secure and intelligent systems — cybersecurity, AI, and backend engineering."
     );
   }, []);
 
@@ -31,6 +32,7 @@ const Index = () => {
       <Projects />
       <Education />
       <Certifications />
+      <Achievements />
       <Contact />
       <Footer />
     </main>
