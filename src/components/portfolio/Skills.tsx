@@ -4,24 +4,46 @@ import { Code2, Shield, Layers, Wrench } from "lucide-react";
 
 const groups = [
   {
-    icon: Code2,
-    label: "Programming",
-    items: ["Python", "JavaScript"],
-  },
-  {
     icon: Shield,
     label: "Cybersecurity",
-    items: ["Networking", "Linux", "Security Basics"],
+    items: [
+      "Network Security",
+      "SOC Operations",
+      "Threat Analysis",
+      "OWASP Top 10",
+      "Cloud Security Basics",
+    ],
+  },
+  {
+    icon: Code2,
+    label: "Programming",
+    items: [
+      "Python",
+      "JavaScript (Node.js, Express)",
+      "C++",
+      "HTML, CSS",
+    ],
   },
   {
     icon: Layers,
-    label: "Frameworks",
-    items: ["Flask", "Django"],
+    label: "Cloud & DevOps",
+    items: [
+      "AWS (Cloud Practitioner)",
+      "AWS IoT",
+      "Docker",
+      "REST APIs",
+    ],
   },
   {
     icon: Wrench,
-    label: "Tools",
-    items: ["Wireshark", "Git"],
+    label: "Tools & Systems",
+    items: [
+      "Linux",
+      "Git & GitHub",
+      "Wireshark",
+      "MongoDB",
+      "MySQL",
+    ],
   },
 ];
 

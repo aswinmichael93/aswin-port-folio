@@ -1,43 +1,39 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
-import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
+import { Github, ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Malware Behavior Analyzer",
+    title: "AI-Driven Cloud Security Automation",
     description:
-      "A sandboxed analysis tool that captures runtime behavior of suspicious binaries and produces structured reports for triage.",
-    stack: ["Python", "Flask", "Linux", "YARA"],
-    github: "#",
-    live: "#",
+      "Monitors cloud environments to detect misconfigurations and security risks using automated analysis and AI-based insights.",
+    stack: ["Python", "AWS", "Cloud Security"],
+    github: "https://github.com/aswinmichael93/AI_driven_cloud_security_automation",
+    tag: "Cloud Security",
+  },
+  {
+    title: "DoS Attack Detection System",
+    description:
+      "Analyzes network traffic patterns to detect denial-of-service attacks and abnormal request spikes with improved alert accuracy.",
+    stack: ["Python", "Machine Learning", "Networking"],
+    github: "https://github.com/aswinmichael93/dos-attack---detector",
     tag: "Security",
   },
   {
-    title: "Network Traffic Inspector",
+    title: "LinguaNE – AI Translation Platform",
     description:
-      "Lightweight packet inspection dashboard built on top of Wireshark captures — surfaces anomalies and suspicious flows.",
-    stack: ["Python", "Wireshark", "Django"],
-    github: "#",
-    live: "#",
-    tag: "Networking",
+      "AI-powered translation system supporting text, speech, and OCR for regional and low-resource languages.",
+    stack: ["Python", "NLP", "AI"],
+    github: "https://github.com/aswinmichael93/LinguaNE",
+    tag: "AI",
   },
   {
-    title: "Phishing URL Classifier",
+    title: "Password Strength Checker",
     description:
-      "An AI model that classifies URLs as benign or phishing using lexical and host-based features. Exposed via a clean REST API.",
-    stack: ["Python", "scikit-learn", "Flask"],
-    github: "#",
-    live: "#",
-    tag: "AI · Security",
-  },
-  {
-    title: "Secure Auth Backend",
-    description:
-      "Hardened authentication backend with JWT, rate limiting, and audit logging — designed as a reusable starter for projects.",
-    stack: ["Django", "PostgreSQL", "JWT"],
-    github: "#",
-    live: "#",
-    tag: "Backend",
+      "Evaluates password strength and enforces secure password practices using rule-based validation techniques.",
+    stack: ["Python"],
+    github: "https://github.com/aswinmichael93/password-checker",
+    tag: "Utility",
   },
 ];
 
@@ -87,19 +83,13 @@ export const Projects = () => {
               </div>
 
               <div className="flex items-center gap-3 pt-5 border-t border-hairline">
-                <a
-                  href={p.github}
-                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Github className="w-4 h-4" /> Code
-                </a>
-                <a
-                  href={p.live}
-                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <ExternalLink className="w-4 h-4" /> Live
-                </a>
-              </div>
+  <a
+    href={p.github}
+    className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+  >
+    <Github className="w-4 h-4" /> Code
+  </a>
+</div>
             </motion.article>
           ))}
         </div>
