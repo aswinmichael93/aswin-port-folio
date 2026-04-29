@@ -4,31 +4,54 @@ import { Award, Terminal, BookOpen, Network } from "lucide-react";
 
 const certs = [
   {
-    icon: Network,
-    title: "Networking Fundamentals",
-    org: "Self-paced lab work",
-    text: "TCP/IP, subnetting, packet analysis with Wireshark.",
-  },
-  {
-    icon: Terminal,
-    title: "Linux for Security",
-    org: "Hands-on practice",
-    text: "Shell, permissions, hardening, log inspection.",
-  },
-  {
-    icon: BookOpen,
-    title: "Security Basics",
-    org: "Continuous learning",
-    text: "OWASP Top 10, secure coding patterns, threat modelling.",
+    icon: Award,
+    title: "Cybersecurity Fundamentals: Practitioner",
+    org: "Palo Alto Networks • 2025",
+    text: "Core security principles, threat landscape, and defensive strategies.",
   },
   {
     icon: Award,
-    title: "AI for Security",
-    org: "Project-based",
-    text: "Applying ML to phishing detection and anomaly spotting.",
+    title: "Security Operations (SOC) Fundamentals",
+    org: "Palo Alto Networks • 2025",
+    text: "Incident detection, SIEM basics, and SOC workflows.",
+  },
+  {
+    icon: Network,
+    title: "Network Security Fundamentals",
+    org: "Palo Alto Networks • 2025",
+    text: "Network defense, protocols, and traffic analysis.",
+  },
+  {
+    icon: Network,
+    title: "Cloud Security Fundamentals",
+    org: "Palo Alto Networks • 2025",
+    text: "Cloud threats, IAM, and secure cloud architecture basics.",
+  },
+  {
+    icon: BookOpen,
+    title: "AWS Cloud Practitioner Essentials",
+    org: "AWS • 2025",
+    text: "Cloud concepts, AWS services, pricing, and architecture.",
+  },
+  {
+    icon: Terminal,
+    title: "Python Essentials 1",
+    org: "Cisco Networking Academy • 2024",
+    text: "Core Python programming for automation and scripting.",
+  },
+  {
+    icon: Award,
+    title: "AI Fundamentals",
+    org: "IBM SkillsBuild • 2025",
+    text: "Machine learning basics and AI applications in security.",
+  },
+  {
+    icon: Network,
+    title: "Introduction to IoT (Elite)",
+    org: "NPTEL • 2025",
+    text: "IoT architecture, protocols, and connected systems.",
   },
 ];
-
 export const Certifications = () => {
   return (
     <section id="certifications" className="section-py relative">
