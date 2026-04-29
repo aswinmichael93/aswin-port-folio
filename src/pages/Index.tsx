@@ -3,8 +3,9 @@ import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
 import { Skills } from "@/components/portfolio/Skills";
 import { Projects } from "@/components/portfolio/Projects";
-import { Education } from "@/components/portfolio/Education";
+import { Experience } from "@/components/portfolio/Experience";
 import { Certifications } from "@/components/portfolio/Certifications";
+import { Education } from "@/components/portfolio/Education";
 import { Achievements } from "@/components/portfolio/Achievement";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
@@ -12,14 +13,18 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Aswin — Cybersecurity Enthusiast & AI Developer";
-    const meta =
-      document.querySelector('meta[name="description"]') ||
-      document.head.appendChild(document.createElement("meta"));
-    meta.setAttribute("name", "description");
+    document.title = "Aswin — Cybersecurity & Cloud Security Enthusiast";
+
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+
     meta.setAttribute(
       "content",
-      "Portfolio of Aswin, an engineering student building secure and intelligent systems — cybersecurity, AI, and backend engineering."
+      "Aswin's portfolio — cybersecurity, cloud security, AI, and backend projects. Hands-on experience in SOC, AWS, and secure system design."
     );
   }, []);
 
@@ -30,6 +35,7 @@ const Index = () => {
       <About />
       <Skills />
       <Projects />
+      <Experience />
       <Education />
       <Certifications />
       <Achievements />
